@@ -1,5 +1,5 @@
 outs:
-    - md5: f301f15e6b2db0caa5ee100f5dd4dc2e.dir
-      size: 80630022
+    - md5: 48c3e28d21fa89a0d15dac16424004ee.dir
+      size: 81928652
       path: Places365
-      nfiles: 5900
+      nfiles: 6000
