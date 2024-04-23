@@ -1,5 +1,5 @@
 outs:
-    - md5: ca901a1461e1aee97e8150e3f0b16279.dir
-      size: 1371378
+    - md5: 5932bf057882316a8868048707d48b59.dir
+      size: 2752333
       path: train_samples
-      nfiles: 100
+      nfiles: 200
