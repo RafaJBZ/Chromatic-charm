@@ -20,7 +20,7 @@ async def colorize(file: UploadFile = File(...)):
     size_transform = transforms(size=(256,256),
                                 interpolation=transforms.InterpolationMode.NEAREST)
 
-    img = await read_image(file, mode=ImageReadMode.RGB)
+    img = await read_image(file, mode=ImageReadMode.GRAY)
     img = size_transform(img)
 
     tensor = img.resize_(1,256,256)
