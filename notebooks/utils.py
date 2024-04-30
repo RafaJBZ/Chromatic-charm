@@ -182,6 +182,12 @@ class MainModel(nn.Module):
     def forward(self):
         self.fake_color = self.net_G(self.gray)
 
+    def predict(self, data):
+        with torch.no_grad():
+            self.setup_input(data)
+            self.forward()
+        return self.fake_color
+
     def backward_D(self):
         # Generate fake images and predictions
         fake_image = self.fake_color
