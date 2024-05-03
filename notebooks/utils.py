@@ -5,6 +5,7 @@ import numpy as np
 from torch import nn, optim
 import matplotlib.pyplot as plt
 from datetime import datetime
+from
 
 from torchvision import transforms
 
@@ -188,6 +189,11 @@ class MainModel(nn.Module):
             self.forward()
         return self.fake_color
 
+    def test_predict(self, data):
+        with torch.no_grad():
+            data = data.to(self.device)
+            pred = self.net_G(data)
+        return pred
     def backward_D(self):
         # Generate fake images and predictions
         fake_image = self.fake_color
