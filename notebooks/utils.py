@@ -5,7 +5,6 @@ import numpy as np
 from torch import nn, optim
 import matplotlib.pyplot as plt
 from datetime import datetime
-from
 
 from torchvision import transforms
 
@@ -194,6 +193,7 @@ class MainModel(nn.Module):
             data = data.to(self.device)
             pred = self.net_G(data)
         return pred
+        
     def backward_D(self):
         # Generate fake images and predictions
         fake_image = self.fake_color
@@ -272,7 +272,7 @@ class MainModel(nn.Module):
         }, filepath)
 
     def load_weights(self, filepath):
-        checkpoint = torch.load(filepath)
+        checkpoint = torch.load(filepath, map_location=torch.device(self.device))
         self.net_G.load_state_dict(checkpoint['net_G_state_dict'])
         self.net_D.load_state_dict(checkpoint['net_D_state_dict'])
         self.opt_G.load_state_dict(checkpoint['opt_G_state_dict'])
