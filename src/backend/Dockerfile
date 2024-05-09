@@ -8,6 +8,8 @@ COPY ./requirements.txt /requirements.txt
 RUN pip install -r ./requirements.txt
 
 COPY ./api.py /api.py
+COPY ./utils.py /utils.py
+COPY ./weight.pth /gan-weights.pth
 EXPOSE 5051
 
 CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "5051"]

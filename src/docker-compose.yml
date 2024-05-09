@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  api-chromatic-charm:
+    build: ./backend
+    ports:
+      - "5051:5051"
+
+  frontend-chromatic-charm:
+    build: ./frontend
+    ports:
+      - "8501:8501"
